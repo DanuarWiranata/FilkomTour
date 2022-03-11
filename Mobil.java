@@ -38,7 +38,6 @@ public class Mobil {
             System.out.printf("Mobil ini telah dipesan untuk %s di wilayah %s", this.kategoriMobil, rute);
         }
         System.out.println();
-        System.out.println();
     }
 
     public void setKategori(String kategoriTerbaru) {
