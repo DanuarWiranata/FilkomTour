@@ -32,7 +32,7 @@ public class Mobil {
     }
 
     public void pergi(String rute) {
-        if (this.kategoriMobil == "Travel") {
+        if (this.kategoriMobil.equals("Travel")) {
             System.out.printf("Mobil ini telah dipesan untuk %s dengan rute %s", this.kategoriMobil, rute);
         } else {
             System.out.printf("Mobil ini telah dipesan untuk %s di wilayah %s", this.kategoriMobil, rute);
