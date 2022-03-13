@@ -21,18 +21,18 @@ class Karyawan {
         switch (this.jabatan){
             case "supir travel" :
                 if ("tidak tersedia".equals(this.info)){
-                    System.out.println("Supir travel menuju " + "Kota A " + "menggunakan mobil " + "mobil x " );
+                    System.out.println("Supir travel sedang bertugas pada suatu keberangkatan");
                 }
                 else {
                     System.out.println("Supir travel siap");
                 }
                 break;
-            case "supir rentCar" :
+            case "supir rental" :
                 if ("tidak tersedia".equals(this.info)){
-                    System.out.println("Supir travel menuju " + "Kota A " + "menggunakan mobil " + "mobil x " );
+                    System.out.println("Supir rental sedang bertugas di suatu wilayah");
                 }
                 else {
-                    System.out.println("Supir mobil siap");
+                    System.out.println("Supir rental siap");
                 }
                 break;
             case "admin" :
@@ -51,6 +51,26 @@ class Karyawan {
         this.info = info;
     }
 
+    public void setNama(String name){
+        this.nama = name;
+    }
+
+    public void setAlamat(String addr){
+        this.alamat = addr;
+    }
+
+    public void setNoTelp(String phoneNum){
+        this.noTelp = phoneNum;
+    }
+
+    public void setJenisKelamin(String jenisKelamin){
+        this.jenisKelamin = jenisKelamin;
+    }
+
+    public void setJabatan(String jabatan){
+        this.jabatan = jabatan;
+    }
+
     //method menampilkan messages
     public void display(){
         System.out.println("INFO KARYAWAN FILKOM TOUR");
@@ -60,6 +80,7 @@ class Karyawan {
         System.out.println("Jenis kelamin   : " + this.jenisKelamin);
         System.out.println("Jabatan         : " + this.jabatan);
         kategoriKaryawan();
+        System.out.println();
     }
 }
 
@@ -85,20 +106,18 @@ class Mobil {
 
     public void infoMobil() {
         System.out.printf("INFO MOBIL FILKOM-TOUR \n");
-        System.out.println();
         System.out.printf("Nomor Plat Mobil : %s\n",this.noPlat);
         System.out.printf("Merk Mobil       : %s\n",this.merkMobil);
         System.out.printf("Warna Mobil      : %s\n",this.warnaMobil);
         System.out.printf("Tahun Keluaran   : %d\n",this.tahunKeluaran);
         System.out.printf("Kategori Mobil   : %s\n",this.kategoriMobil);
-        System.out.println();
     }
 
     public void pergi(String rute) {
         if (this.kategoriMobil.equals("Travel")) {
-            System.out.printf("Mobil ini telah dipesan untuk %s dengan rute %s", this.kategoriMobil, rute);
+            System.out.printf("Mobil ini memiliki jadwal keberangkatan dengan rute %s\n", rute);
         } else {
-            System.out.printf("Mobil ini telah dipesan untuk %s di wilayah %s", this.kategoriMobil, rute);
+            System.out.printf("Mobil ini telah dipesan untuk %s di wilayah %s\n", this.kategoriMobil, rute);
         }
         System.out.println();
     }
@@ -107,6 +126,7 @@ class Mobil {
         this.kategoriMobil = kategoriTerbaru;
     }
 }
+
 public class FilkomTourV2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -123,16 +143,38 @@ public class FilkomTourV2 {
 
         // Jika memilih karyawan
         if (jawab.equals("a")){
-            Karyawan emp = new Karyawan("Ahmad","Malang","08120121210","Laki-laki","supir travel");
-            emp.setInfo("tidak tersedia");
-            emp.display();
+            // Without Constructor
+            Karyawan emp1 = new Karyawan();
+            emp1.setNama("Abdul");
+            emp1.setAlamat("Malang");
+            emp1.setNoTelp("081201921219");
+            emp1.setJenisKelamin("Laki-laki");
+            emp1.setJabatan("supir rental");
+            emp1.setInfo("tersedia");
+            emp1.display();
+
+            // With Constructor
+            Karyawan emp2 = new Karyawan("Ahmad","Malang","08120121210","Laki-laki","supir travel");
+            emp2.setInfo("tidak tersedia");
+            emp2.display();
         }
 
         // Jika memilih mobil
         if(jawab.equals("b")){
-            Mobil car = new Mobil("B 1945 RI","Avanza","Hitam",2020,"Rental");
-            car.infoMobil();
-            car.pergi("Malang");
+            // Without Constructor
+            Mobil car1 = new Mobil();
+            car1.noPlat = "N 1234 AB";
+            car1.merkMobil = "Isuzu Elf";
+            car1.warnaMobil = "Putih";
+            car1.tahunKeluaran = 2019;
+            car1.kategoriMobil = "Travel";
+            car1.infoMobil();
+            car1.pergi("Malang-Surabaya");
+
+            // With Constructor
+            Mobil car2 = new Mobil("N 1945 RI","Avanza","Hitam",2020,"Rental");
+            car2.infoMobil();
+            car2.pergi("Malang");
         }
     }
 }
