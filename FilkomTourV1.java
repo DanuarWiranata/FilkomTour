@@ -66,11 +66,8 @@ class Karyawan {
 
 class Mobil {
 
-    String noPlat;
-    String merkMobil;
-    String warnaMobil;
-    int tahunKeluaran;
-    String kategoriMobil;
+    private String noPlat, merkMobil, warnaMobil, kategoriMobil;
+    private int tahunKeluaran;
 
     public Mobil() {
         //no-argument
@@ -82,6 +79,26 @@ class Mobil {
         this.warnaMobil = warnaMobil;
         this.tahunKeluaran = tahunKeluaran;
         this.kategoriMobil = kategoriMobil;
+    }
+    
+    public void setNoPlat(String noPlat) {
+        this.noPlat = noPlat;
+    }
+
+    public void setMerkMobil(String merkMobil) {
+        this.merkMobil = merkMobil;
+    }
+
+    public void setWarnaMobil(String warnaMobil) {
+        this.warnaMobil = warnaMobil;
+    }
+
+    public void setTahunKeluaran(String tahunKeluaran) {
+        this.tahunKeluaran = tahunKeluaran;
+    }
+
+    public void setKategoriMobil(String kategoriTerbaru) {
+        this.kategoriMobil = kategoriTerbaru;
     }
 
     public void infoMobil() {
@@ -110,10 +127,6 @@ class Mobil {
         if (this.kategoriMobil.equals("Rental")){
             System.out.println("Mobil ini belum dipesan untuk wilayah manapun");
         }
-    }
-
-    public void setKategori(String kategoriTerbaru) {
-        this.kategoriMobil = kategoriTerbaru;
     }
 }
 
