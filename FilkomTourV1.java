@@ -93,7 +93,7 @@ class Mobil {
         this.warnaMobil = warnaMobil;
     }
 
-    public void setTahunKeluaran(String tahunKeluaran) {
+    public void setTahunKeluaran(int tahunKeluaran) {
         this.tahunKeluaran = tahunKeluaran;
     }
 
