@@ -2,11 +2,8 @@ package advanceprogramming;
 
 public class Mobil {
 
-    String noPlat;
-    String merkMobil;
-    String warnaMobil;
-    int tahunKeluaran;
-    String kategoriMobil;
+    private String noPlat, merkMobil, warnaMobil, kategoriMobil;
+    private int tahunKeluaran;
 
     public Mobil() {
         //no-argument
@@ -18,6 +15,26 @@ public class Mobil {
         this.warnaMobil = warnaMobil;
         this.tahunKeluaran = tahunKeluaran;
         this.kategoriMobil = kategoriMobil;
+    }
+    
+    public void setNoPlat(String noPlat) {
+        this.noPlat = noPlat;
+    }
+
+    public void setMerkMobil(String merkMobil) {
+        this.merkMobil = merkMobil;
+    }
+
+    public void setWarnaMobil(String warnaMobil) {
+        this.warnaMobil = warnaMobil;
+    }
+
+    public void setTahunKeluaran(int tahunKeluaran) {
+        this.tahunKeluaran = tahunKeluaran;
+    }
+
+    public void setKategoriMobil(String kategoriTerbaru) {
+        this.kategoriMobil = kategoriTerbaru;
     }
 
     public void infoMobil() {
