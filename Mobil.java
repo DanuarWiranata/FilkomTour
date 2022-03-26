@@ -56,17 +56,13 @@ public class Mobil {
         }
         System.out.println();
     }
-
-    public void setKategori(String kategoriTerbaru) {
-        this.kategoriMobil = kategoriTerbaru;
-    }
-
-    public static void main(String[] args) {
-        Mobil c1 = new Mobil("N 1020 AC", "Toyota", "Hitam", 2018, "Travel");
-        c1.infoMobil();
-        c1.pergi("Malang-Surabaya");
-        c1.setKategori("Rentcar");
-        c1.infoMobil();
-        c1.pergi("Kota Malang");
+    
+    public void pergi() {
+        if (this.kategoriMobil.equals("Travel")){
+            System.out.println("Mobil ini belum memiliki jadwal keberangkatan");
+        }
+        if (this.kategoriMobil.equals("Rental")){
+            System.out.println("Mobil ini belum dipesan untuk wilayah manapun");
+        }
     }
 }
